@@ -1,1 +1,2 @@
 # astrogame
+Updating the readme
