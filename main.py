@@ -4,6 +4,7 @@ from constants import *
 from asteroid import Asteroid
 from asteroidfield import AsteroidField
 
+
 #initialising groups
 updatable = pygame.sprite.Group()
 drawable = pygame.sprite.Group()
@@ -30,8 +31,6 @@ def main():
 
     #creating asteroids
     rock = AsteroidField()
-  
-
 
 
     #infinite loop
@@ -47,6 +46,13 @@ def main():
         updatable.update(dt)
         for items in drawable:
             items.draw(screen)
+        for asteroid in asteroids:
+            if asteroid.collide(p1):
+                print("Game Over!")
+                exit()
+            else:
+                pass
+            
         # drawable.draw(screen)
         pygame.display.flip()
         dt = clock.tick(60)/1000
