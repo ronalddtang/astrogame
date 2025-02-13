@@ -33,8 +33,8 @@ class Asteroid(CircleShape):
             
             #generates 1 an ansteroid that is smaller
             asteroid_1 = Asteroid(self.position.x, self.position.y, random_radius)
-            asteroid_1.velocity = direction * speed
+            asteroid_1.velocity = direction * speed * 1.2
             
             #generates 2nd asteroid
             asteroid_2 = Asteroid(self.position.x, self.position.y, random_radius)
-            asteroid_2.velocity = -direction * speed
+            asteroid_2.velocity = -direction * speed * 1.2
