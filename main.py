@@ -34,7 +34,7 @@ def main():
     #creating asteroids
     rock = AsteroidField()
 
-    #shots initialising
+
 
     #infinite loop
     while True:
@@ -47,6 +47,7 @@ def main():
         screen.fill((0,0,0))
         
         updatable.update(dt)
+
         for items in drawable:
             items.draw(screen)
         
@@ -57,9 +58,14 @@ def main():
             else:
                 pass
             
-        for bullet in bullets:
-        # drawable.draw(screen)
-            pass
+        for asteroid in asteroids:
+            for bullet in bullets:
+                if bullet.collide(asteroid):
+                    asteroid.kill()
+                    bullet.kill()
+
+
+
         pygame.display.flip()
         dt = clock.tick(60)/1000
 
